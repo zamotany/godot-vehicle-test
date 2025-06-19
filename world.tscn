@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://do2uflksc68jw"]
+
+[ext_resource type="PackedScene" uid="uid://be3q2cl7uulmp" path="res://vehicle.tscn" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://ci6l23y7qwuw0" path="res://debug/scenes/debug_overlay/debug_overlay.tscn" id="2_fj7yv"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_f3sb7"]
+data = PackedVector3Array(25, 0, 25, -25, 0, 25, 25, 0, -25, -25, 0, 25, -25, 0, -25, 25, 0, -25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fj7yv"]
+albedo_color = Color(0.00392157, 0.0862745, 0.105882, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tlwt5"]
+material = SubResource("StandardMaterial3D_fj7yv")
+size = Vector2(50, 50)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_f3sb7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+mesh = SubResource("PlaneMesh_tlwt5")
+skeleton = NodePath("../../..")
+
+[node name="Vehicle" parent="." instance=ExtResource("1_f3sb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07213, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.775264, 0.276545, -0.567881, 0, 0.899062, 0.437822, 0.631637, -0.339428, 0.69701, -4.64028, 5.59152, 4.72939)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.159209, 0.987245, 0, -0.987245, 0.159209, -2.95481, 27.7085, 2.59837)
+shadow_enabled = true
+
+[node name="DebugOverlay" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("2_fj7yv")]
+camera = NodePath("../Camera3D")
