@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://do2uflksc68jw"]
 
-[ext_resource type="PackedScene" uid="uid://be3q2cl7uulmp" path="res://vehicle.tscn" id="1_f3sb7"]
-[ext_resource type="PackedScene" uid="uid://ci6l23y7qwuw0" path="res://debug/scenes/debug_overlay/debug_overlay.tscn" id="2_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://be3q2cl7uulmp" path="res://vehicle-test/scenes/vehicle/vehicle.tscn" id="1_yxbno"]
+[ext_resource type="PackedScene" uid="uid://ci6l23y7qwuw0" path="res://debug/scenes/debug_overlay/debug_overlay.tscn" id="2_sq54n"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_f3sb7"]
 data = PackedVector3Array(25, 0, 25, -25, 0, 25, 25, 0, -25, -25, 0, 25, -25, 0, -25, 25, 0, -25)
@@ -24,7 +24,7 @@ shape = SubResource("ConcavePolygonShape3D_f3sb7")
 mesh = SubResource("PlaneMesh_tlwt5")
 skeleton = NodePath("../../..")
 
-[node name="Vehicle" parent="." instance=ExtResource("1_f3sb7")]
+[node name="Vehicle" parent="." instance=ExtResource("1_yxbno")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07213, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -34,5 +34,5 @@ transform = Transform3D(0.775264, 0.276545, -0.567881, 0, 0.899062, 0.437822, 0.
 transform = Transform3D(1, 0, 0, 0, 0.159209, 0.987245, 0, -0.987245, 0.159209, -2.95481, 27.7085, 2.59837)
 shadow_enabled = true
 
-[node name="DebugOverlay" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("2_fj7yv")]
+[node name="DebugOverlay" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("2_sq54n")]
 camera = NodePath("../Camera3D")
