@@ -29,9 +29,10 @@ target_position = Vector3(0, -0.83, 0)
 script = ExtResource("2_fouyv")
 spring_length = 0.7
 spring_stiffness = 45000.0
-spring_damer = 4500.0
+spring_damper = 4500.0
 wheel_radius = 0.3
 use_as_traction = true
+use_as_steering = true
 
 [node name="FR_Wheel" type="RayCast3D" parent="Wheels"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, -1.4)
@@ -39,9 +40,10 @@ target_position = Vector3(0, -0.83, 0)
 script = ExtResource("2_fouyv")
 spring_length = 0.7
 spring_stiffness = 45000.0
-spring_damer = 4500.0
+spring_damper = 4500.0
 wheel_radius = 0.3
 use_as_traction = true
+use_as_steering = true
 
 [node name="RL_Wheel" type="RayCast3D" parent="Wheels"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0, 1.4)
@@ -49,7 +51,7 @@ target_position = Vector3(0, -0.83, 0)
 script = ExtResource("2_fouyv")
 spring_length = 0.7
 spring_stiffness = 45000.0
-spring_damer = 4500.0
+spring_damper = 4500.0
 wheel_radius = 0.3
 
 [node name="RR_Wheel" type="RayCast3D" parent="Wheels"]
@@ -58,7 +60,7 @@ target_position = Vector3(0, -0.83, 0)
 script = ExtResource("2_fouyv")
 spring_length = 0.7
 spring_stiffness = 45000.0
-spring_damer = 4500.0
+spring_damper = 4500.0
 wheel_radius = 0.3
 
 [node name="CameraPivot" type="Node3D" parent="."]

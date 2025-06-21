@@ -18,6 +18,10 @@ func draw(key: String, origin: Vector3, vector: Vector3, color: Color, width: fl
 	vectors[key] = DebugVector.new(origin, vector, color, width)
 	queue_redraw()
 
+func clear(key: String) -> void:
+	vectors.erase(key)
+	queue_redraw()
+
 class DebugVector:
 	var origin: Vector3
 	var vector: Vector3
