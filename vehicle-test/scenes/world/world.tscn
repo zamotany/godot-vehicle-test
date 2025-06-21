@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://do2uflksc68jw"]
+[gd_scene load_steps=8 format=3 uid="uid://do2uflksc68jw"]
 
 [ext_resource type="PackedScene" uid="uid://be3q2cl7uulmp" path="res://vehicle-test/scenes/vehicle/vehicle.tscn" id="1_yxbno"]
 [ext_resource type="PackedScene" uid="uid://ci6l23y7qwuw0" path="res://debug/scenes/debug_overlay/debug_overlay.tscn" id="2_sq54n"]
@@ -13,22 +13,29 @@ albedo_color = Color(0.00392157, 0.0862745, 0.105882, 1)
 material = SubResource("StandardMaterial3D_fj7yv")
 size = Vector2(50, 50)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yxbno"]
+height = 5.0
+radius = 0.2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_sq54n"]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 5.0
+
 [node name="Node3D" type="Node3D"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Ground" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 shape = SubResource("ConcavePolygonShape3D_f3sb7")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/CollisionShape3D"]
 mesh = SubResource("PlaneMesh_tlwt5")
 skeleton = NodePath("../../..")
 
-[node name="Vehicle" parent="." instance=ExtResource("1_yxbno")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07213, 0)
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.775264, 0.276545, -0.567881, 0, 0.899062, 0.437822, 0.631637, -0.339428, 0.69701, -4.64028, 5.59152, 4.72939)
+[node name="Vehicle" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_yxbno")]
+transform = Transform3D(0.921856, 0, 0.387532, 0, 1, 0, -0.387532, 0, 0.921856, 0, 1.09796, 0)
+camera = NodePath("../Camera3D")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.159209, 0.987245, 0, -0.987245, 0.159209, -2.95481, 27.7085, 2.59837)
@@ -36,3 +43,15 @@ shadow_enabled = true
 
 [node name="DebugOverlay" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("2_sq54n")]
 camera = NodePath("../Camera3D")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.08504, 7.18919)
+
+[node name="Obstacle1" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -2.10815, 0, -5.52607)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle1"]
+shape = SubResource("CylinderShape3D_yxbno")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle1/CollisionShape3D"]
+mesh = SubResource("CylinderMesh_sq54n")

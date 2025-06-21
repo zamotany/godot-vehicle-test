@@ -18,3 +18,11 @@ config/icon="res://icon.svg"
 [autoload]
 
 GDebugOverlay="*res://debug/scenes/debug_overlay/g_debug_overlay.gd"
+
+[input]
+
+ui_unlock_camera={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(98, 17),"global_position":Vector2(107, 65),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}

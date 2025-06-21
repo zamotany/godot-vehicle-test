@@ -14,24 +14,24 @@ func draw_triangle(pos, dir, size, color) -> void:
 	var points = PackedVector2Array([a, b, c])
 	draw_polygon(points, PackedColorArray([color]))
 	
-func draw(object: Node3D, vector: Vector3, color: Color, width: float) -> void:
-	vectors[object.get_instance_id()] = DebugVector.new(object, vector, color, width)
+func draw(key: String, origin: Vector3, vector: Vector3, color: Color, width: float) -> void:
+	vectors[key] = DebugVector.new(origin, vector, color, width)
 	queue_redraw()
 
 class DebugVector:
-	var object: Node3D
+	var origin: Vector3
 	var vector: Vector3
 	var color: Color
 	var width: float
 
-	func _init(object: Node3D, vector: Vector3, color: Color, width: float) -> void:
-		self.object = object
+	func _init(origin: Vector3, vector: Vector3, color: Color, width: float) -> void:
+		self.origin = origin
 		self.vector = vector
 		self.color = color
 		self.width = width
 
 	func draw(control: DebugOverlayControl, camera: Camera3D) -> void:
-		var start = camera.unproject_position(object.global_transform.origin)
-		var end = camera.unproject_position(object.global_transform.origin + vector)
+		var start = camera.unproject_position(origin)
+		var end = camera.unproject_position(origin + vector)
 		control.draw_line(start, end, color, width)
 		control.draw_triangle(end, start.direction_to(end), width * 2, color)
