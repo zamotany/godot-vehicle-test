@@ -4,6 +4,12 @@ extends RigidBody3D
 @export var tilt_limit = deg_to_rad(75)
 @export var camera: Camera3D
 
+@export_group("Wheels")
+@export var front_left: WheelConfig
+@export var front_right: WheelConfig
+@export var rear_left: WheelConfig
+@export var rear_right: WheelConfig
+
 @onready var camera_pivot: Node3D = $CameraPivot
 @onready var camera_arm: SpringArm3D = $CameraPivot/CameraArm
 

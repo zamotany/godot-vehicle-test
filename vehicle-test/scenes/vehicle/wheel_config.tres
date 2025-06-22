@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://uplkq6ec3vno"]
+
+[ext_resource type="Script" uid="uid://cullba6xdwa2n" path="res://vehicle-test/scenes/vehicle/wheel_config.gd" id="1_wl3mb"]
+
+[resource]
+script = ExtResource("1_wl3mb")

@@ -1,8 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://do2uflksc68jw"]
+[gd_scene load_steps=18 format=3 uid="uid://do2uflksc68jw"]
 
 [ext_resource type="Material" uid="uid://r6hdxd2212o2" path="res://vehicle-test/scenes/world/checkerboard.tres" id="1_sq54n"]
 [ext_resource type="PackedScene" uid="uid://be3q2cl7uulmp" path="res://vehicle-test/scenes/vehicle/vehicle.tscn" id="1_yxbno"]
 [ext_resource type="PackedScene" uid="uid://ci6l23y7qwuw0" path="res://debug/scenes/debug_overlay/debug_overlay.tscn" id="2_sq54n"]
+[ext_resource type="Resource" uid="uid://cffqh3j40b5or" path="res://vehicle-test/scenes/vehicle/presets/fwd_front.tres" id="3_0lort"]
+[ext_resource type="Resource" uid="uid://c4negppa8p2o" path="res://vehicle-test/scenes/vehicle/presets/fwd_rear.tres" id="4_6fjqv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yxbno"]
 size = Vector3(200, 0.02, 200)
@@ -61,6 +63,10 @@ skeleton = NodePath("../../..")
 [node name="Vehicle" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_yxbno")]
 transform = Transform3D(0.975149, 0, 0.221548, 0, 1, 0, -0.221548, 0, 0.975149, 0, 2.50362, 0)
 camera = NodePath("../Camera3D")
+front_left = ExtResource("3_0lort")
+front_right = ExtResource("3_0lort")
+rear_left = ExtResource("4_6fjqv")
+rear_right = ExtResource("4_6fjqv")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.159209, 0.987245, 0, -0.987245, 0.159209, -2.95481, 27.7085, 2.59837)
