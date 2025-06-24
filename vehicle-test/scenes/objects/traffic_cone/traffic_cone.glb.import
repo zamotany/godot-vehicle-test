@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://btbsimbounkij"
-path="res://.godot/imported/traffic_cone.glb-68aaf5dd4ea93703aa14190a99d05a59.scn"
+path="res://.godot/imported/traffic_cone.glb-6249f1ac9805937bd2df8690c2d308b7.scn"
 
 [deps]
 
-source_file="res://objects/traffic_cone/traffic_cone.glb"
-dest_files=["res://.godot/imported/traffic_cone.glb-68aaf5dd4ea93703aa14190a99d05a59.scn"]
+source_file="res://vehicle-test/scenes/objects/traffic_cone/traffic_cone.glb"
+dest_files=["res://.godot/imported/traffic_cone.glb-6249f1ac9805937bd2df8690c2d308b7.scn"]
 
 [params]
 
@@ -34,4 +34,4 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
 gltf/naming_version=1
-gltf/embedded_image_handling=1
+gltf/embedded_image_handling=2

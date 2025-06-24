@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://yv1wwumqiys4"
-path.s3tc="res://.godot/imported/traffic_cone_traffic_cone_tex.png-26439cbfc634059ac187cd3fc4893bbe.s3tc.ctex"
+path.s3tc="res://.godot/imported/traffic_cone_traffic_cone_tex.png-989c294ba85a11262cd7dce95a4382cc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://objects/traffic_cone/traffic_cone_traffic_cone_tex.png"
-dest_files=["res://.godot/imported/traffic_cone_traffic_cone_tex.png-26439cbfc634059ac187cd3fc4893bbe.s3tc.ctex"]
+source_file="res://vehicle-test/scenes/objects/traffic_cone/traffic_cone_traffic_cone_tex.png"
+dest_files=["res://.godot/imported/traffic_cone_traffic_cone_tex.png-989c294ba85a11262cd7dce95a4382cc.s3tc.ctex"]
 
 [params]
 
