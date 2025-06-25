@@ -26,8 +26,6 @@ func _process(_delta: float) -> void:
 		is_camera_locked = false
 	else:
 		is_camera_locked = true
-
-	GDebugOverlay.draw("vehicle_forward", self, self.global_basis.z * -2.0, Color.YELLOW)
 	
 
 
