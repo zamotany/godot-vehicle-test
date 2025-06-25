@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2vube3jbuof6"]
+
+[ext_resource type="PackedScene" uid="uid://1d8qfyptt47l" path="res://vehicle-test/scenes/objects/road_barrier/road_barrier.glb" id="1_hjny4"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vdu0x"]
+points = PackedVector3Array(-1.7, 0, -1.75278, -0.925881, 2.37169, -3.6, 1.7, 0, -1.75278, -1.7, 0, 1.75208, 0.925548, 2.37169, -3.6, -0.925881, 2.37169, 3.6, -0.0638998, 4.90569, -1.61041, -0.151429, 4.64255, -3.6, 1.7, 0, 1.75208, 0.151096, 4.64255, -3.6, 0.063567, 4.90569, -1.61041, 0.925548, 2.37169, 3.6, -0.0638998, 4.90569, 1.60971, -0.151429, 4.64255, 3.6, 0.063567, 4.90569, 1.60971, 0.151096, 4.64255, 3.6)
+
+[node name="RoadBarrier" type="RigidBody3D"]
+
+[node name="road_barrier2" parent="." instance=ExtResource("1_hjny4")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_vdu0x")
