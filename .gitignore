@@ -1,3 +1,10 @@
+# Build and Godot binaries
+build/
+*.exe
+
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# Blender backup files
+*.blend?

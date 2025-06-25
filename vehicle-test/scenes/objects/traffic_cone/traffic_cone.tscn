@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://05oepho1rfm6"]
+
+[ext_resource type="PackedScene" uid="uid://btbsimbounkij" path="res://vehicle-test/scenes/objects/traffic_cone/traffic_cone.glb" id="1_jkk2q"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_uv5ca"]
+points = PackedVector3Array(-0.647182, 0, 0.266703, -0.646295, 0, -0.26911, -0.26911, 0, 0.646168, -0.000126719, 2.82, -0.000126719, -0.26683, 0, -0.647182, 0.266703, 0, 0.647182, 0.647182, 0, -0.26683, 0.268983, 0, -0.646295, 0.646168, 0, 0.268983)
+
+[node name="TrafficCone" type="RigidBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_uv5ca")
+
+[node name="traffic_cone2" parent="." instance=ExtResource("1_jkk2q")]
